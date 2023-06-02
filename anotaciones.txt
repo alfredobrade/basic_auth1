@@ -1,0 +1,30 @@
+create database dbprueba
+
+use dbprueba
+
+create table "Users"(
+IdUser int primary key identity, 
+UserName varchar(20),
+"Password" varchar(20)
+)
+
+drop table "User"
+
+insert into Users(UserName, Password)
+values
+('Admin','123')
+
+select * from Users
+
+
+
+paquetes NuGet
+Microsoft.EntityFrameworkCore.SqlServer
+Microsoft.EntityFrameworkCore.Tools
+Microsoft.AspNetCore.Authentication.JwtBearer
+System.IdentityModel.Tokens.Jwt
+
+en la consola de administrador de paquetes nuget
+Scaffold-DbContext "Server=DESKTOP-MQQD7MM\SQLEXPRESS; DataBase=prueba_auth_apiNet7; Trusted_Connection=True; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutPutDir Models
+esto genera la clase context
+se le puede agregar -force para forzar las actualizaciones despues de una modificacion
